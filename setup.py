@@ -4,7 +4,7 @@ with open("README.md", 'r') as f:
     long_description = f.read()
 
 setup(
-    name='publishtutorial',
+    name='publishtutorial', # change this field if you want to create your package
     version='0.0.1',
     description='Hello!',
     long_description=long_description,
@@ -19,6 +19,7 @@ setup(
         "dev": [
             "pytest>=3.7",
             "check-manifest>=0.49",
+            "twine>=4.0.2",
         ]
     },
     url="https://github.com/matteobollettino/publish_tutorial",

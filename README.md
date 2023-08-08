@@ -17,7 +17,9 @@ say_hello("Everybody")
 ```
 
 ## Developing
-To install publishtutorial, along with the tools you need to develop and run tests, run the following in your virtualenv:
+To install publishtutorial,
+ along with the tools you need to develop and run tests,
+ run the following in your virtualenv:
 ```bash
 $ pip3 install -e .[dev]
 ```
