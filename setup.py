@@ -2,6 +2,7 @@ from setuptools import setup
 
 with open("README.md", 'r') as f:
     long_description = f.read()
+
 setup(
     name='publishtutorial',
     version='0.0.1',
@@ -17,8 +18,12 @@ setup(
     extras_require = {
         "dev": [
             "pytest>=3.7",
+            "check-manifest>=0.49",
         ]
     },
+    url="https://github.com/matteobollettino/publish_tutorial",
+    author="Matteo Bollettino",
+    author_email="matteo.bollettino@moxoff.com",
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.6",
