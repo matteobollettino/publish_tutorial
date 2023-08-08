@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 with open("README.md", 'r') as f:
     long_description = f.read()
@@ -8,11 +8,11 @@ with open('requirements.txt') as f:
 
 setup(
     name='publishtutorial', # change this field if you want to create your package
-    version='0.0.3',
+    version='0.0.4',
     description='Hello!',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    py_modules=["myfunc"],
+    py_modules=find_packages(),
     package_dir={'':'src'},
     install_requires=required,
     extras_require = {
