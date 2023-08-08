@@ -3,18 +3,18 @@ from setuptools import setup
 with open("README.md", 'r') as f:
     long_description = f.read()
 
+with open('requirements.txt') as f:
+    required = f.read().splitlines()
+
 setup(
     name='publishtutorial', # change this field if you want to create your package
-    version='0.0.2',
+    version='0.0.3',
     description='Hello!',
     long_description=long_description,
     long_description_content_type="text/markdown",
     py_modules=["myfunc"],
     package_dir={'':'src'},
-    install_requires=[
-        'pandas==2.0.3',
-        'meteostat'
-    ],
+    install_requires=required,
     extras_require = {
         "dev": [
             "pytest>=3.7",
