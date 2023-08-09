@@ -141,12 +141,13 @@ $ twine upload dist/*
 Insert username and password
 ```
 
-to update the package after some modifications
-CHANGE VERSION and then
+to update the package after some modifications,
+CHANGE VERSION, build the new package and then
 ```bash
 # Check if everything is ok
 $ twine check dist/*
 
 # Dist also includes previous versions
-$ twine upload --repository-url https://upload.pypi.org/legacy/ dist/NAME-VERSION-py3-none-any.whl dist/NAME-VERSION.tar.gz
+$ cd dist
+$ twine upload --repository-url https://upload.pypi.org/legacy/ NAME-VERSION-py3-none-any.whl NAME-VERSION.tar.gz
 ```
