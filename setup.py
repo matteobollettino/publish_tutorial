@@ -8,14 +8,14 @@ with open('requirements.txt') as f:
 
 setup(
     name='publishtutorial', # change this field if you want to create your package
-    version='0.0.3',
+    version='0.0.4',
     description='Hello!',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    py_modules=["myfunc"],
+    py_modules=["myfunc, second_script"],
     package_dir={'':'src'},
     install_requires=required,
-    extras_require = {
+    extras_require={
         "dev": [
             "pytest>=3.7",
             "check-manifest>=0.49",
