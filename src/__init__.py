@@ -1,1 +1,0 @@
-print("\nHello from __init__\n")
