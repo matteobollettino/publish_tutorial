@@ -1,8 +1,10 @@
-notes taken following this [YouTube tutorial](https://www.youtube.com/watch?v=GIF3LaRqgXo&t=3s)
+notes taken following the following YouTube tutorials:
+- [Coding Tech](https://www.youtube.com/watch?v=GIF3LaRqgXo&t=3s)
+- [NeuralNine](https://www.youtube.com/watch?v=tEFkHEKypLI&t=2s)
 
-choose a unique name for your package: here we are going to use _publishtutorial_, so if you want to repeat the passages, choose a new name, not present on PyPI
+Choose a unique name for your package: here we are going to use _publishtutorial_, so if you want to repeat the passages, choose a new name, not present on PyPI
 
-First version of setup.py (not really the one of the video but useful to start)
+First version of setup.py (a mix of the two videos, useful to start)
 
 ```python
 from setuptools import setup
@@ -151,3 +153,45 @@ $ twine check dist/*
 $ cd dist
 $ twine upload --repository-url https://upload.pypi.org/legacy/ NAME-VERSION-py3-none-any.whl NAME-VERSION.tar.gz
 ```
+
+If you want to include a second script in your package, you just include the script name in the setup.py
+```python
+setup(
+    ...,
+    py_modules=["myfunc", "second_script"],
+    ...
+)
+```
+
+At this point of the tutorial, to import the first function from the second script you simply do
+```python
+from myfunc import average
+```
+and the same in a python terminal when you want to use the package functions
+
+Now we are going to automatise the reading of the scripts in the setup.py file, without explicitly
+specify them. We have to change a few things in order to do that.
+
+First, we add an empty \_\_init__.py file in the src folder, in order to make it detectable as a package
+
+Second, we modify the setup.py as following
+```python
+from setuptools import setup, find_packages
+
+setup(
+    ...,
+    # py_modules=["myfunc", "second_script"],
+    packages=find_packages(where='src'),
+    # package_dir={'':'src'},
+    ...
+)
+```
+
+So we import the find_packages function as well, specifying to look into the src folder
+and we quit the lines that are commented.
+
+Then, to call functions from the other scripts, we now have to specify to import them from src:
+```python
+from src.myfunc import say_hello
+```
+The same when we want to use the package from the python terminal

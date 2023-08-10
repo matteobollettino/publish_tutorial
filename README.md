@@ -8,8 +8,8 @@ pip3 install publishtutorial
 
 ## Usage
 ```python
-from myfunc import say_hello, average
-from second_script import second_function
+from src.myfunc import say_hello, average
+from src.second_script import second_function
 
 # Generate "Hello, World!"
 say_hello()
@@ -46,4 +46,4 @@ $ pytest
 ```
 
 
-Credits to: [Coding Tech](https://www.youtube.com/watch?v=GIF3LaRqgXo&t=3s)
+Credits to: [Coding Tech](https://www.youtube.com/watch?v=GIF3LaRqgXo&t=3s) and [NeuralNine](https://www.youtube.com/watch?v=tEFkHEKypLI&t=2s)

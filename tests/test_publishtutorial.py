@@ -1,5 +1,5 @@
-from myfunc import say_hello, average
-from second_script import second_function
+from src.myfunc import say_hello, average
+from src.second_script import second_function
 
 def test_publishtutorial_no_params():
     assert say_hello() == "Hello, World!"
